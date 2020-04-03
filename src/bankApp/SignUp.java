@@ -3,6 +3,7 @@ package bankApp;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -26,12 +27,8 @@ public class SignUp implements Initializable {
         if(password.getText().equals(confirmPassword.getText())) {
             if (OracleAccess.addUser(firstName.getText(), lastName.getText(), username.getText(), password.getText())) {
                 try {
-
-                    Stage stage = new Stage();
-                    Scene scene = new Scene(FXMLLoader.load(getClass().getResource("login.fxml")));
-                    stage.setTitle("My Banking App");
-                    stage.setScene(scene);
-                    stage.show();
+                    Parent root = FXMLLoader.load(getClass().getResource("login.fxml"));
+                    username.getScene().setRoot(root);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -45,11 +42,8 @@ public class SignUp implements Initializable {
     }
     public void cancel(){
             try{
-                Stage stage = new Stage();
-                Scene scene = new Scene(FXMLLoader.load(getClass().getResource("login.fxml")));
-                stage.setTitle("My Banking App");
-                stage.setScene(scene);
-                stage.show();
+                Parent root = FXMLLoader.load(getClass().getResource("login.fxml"));
+                username.getScene().setRoot(root);
             } catch (IOException e) {
                 e.printStackTrace();
             }

@@ -5,11 +5,8 @@ import java.sql.*;
 public class OracleAccess {
 
     public static Connection connectDB() throws ClassNotFoundException, SQLException {
-        Connection connect = null;
         Class.forName("oracle.jdbc.driver.OracleDriver");
-        // Setup the connection with the DB
-        connect = DriverManager.getConnection("jdbc:oracle:thin:@mybankapp_high?TNS_ADMIN=C:\\Users\\jdben\\Downloads\\Wallet_MyBankApp", "ADMIN", "CCsabathia52!");
-        return connect;
+        return DriverManager.getConnection("jdbc:oracle:thin:@mybankapp_high?TNS_ADMIN=C:\\Users\\jdben\\Downloads\\Wallet_MyBankApp", "ADMIN", "CCsabathia52!");
     }
 
     public static boolean addUser(String firstname, String lastname, String username, String password) throws SQLException, ClassNotFoundException {
@@ -36,8 +33,8 @@ public class OracleAccess {
     }
 
     static boolean checkUser(String username) throws ClassNotFoundException, SQLException {
-        PreparedStatement pstmt1 = null;
-        ResultSet rs = null;
+        PreparedStatement pstmt1;
+        ResultSet rs;
         String query = "SELECT user_name FROM users where user_name=?";
         Connection connect = connectDB();
         pstmt1 = connect.prepareStatement(query);
@@ -64,8 +61,8 @@ public class OracleAccess {
     }
 
     private static boolean checkUser(String username, String password) throws SQLException, ClassNotFoundException {
-        PreparedStatement pstmt1 = null;
-        ResultSet rs = null;
+        PreparedStatement pstmt1;
+        ResultSet rs;
         String query = "SELECT user_name, password FROM users where user_name=?";
         Connection connect = connectDB();
         pstmt1 = connect.prepareStatement(query);
