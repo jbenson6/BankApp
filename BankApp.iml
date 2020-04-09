@@ -7,13 +7,12 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" exported="" name="lib" level="project" />
-    <orderEntry type="library" exported="" name="mysql-connector-java-5.1.48" level="project" />
+    <orderEntry type="library" exported="" name="hamcrest-core-1.3" level="project" />
+    <orderEntry type="library" exported="" name="junit-4.13" level="project" />
     <orderEntry type="library" exported="" name="ojdbc8" level="project" />
     <orderEntry type="library" exported="" name="oraclepki" level="project" />
     <orderEntry type="library" exported="" name="osdt_cert" level="project" />
     <orderEntry type="library" exported="" name="osdt_core" level="project" />
-    <orderEntry type="library" exported="" name="junit-4.13" level="project" />
-    <orderEntry type="library" exported="" name="hamcrest-core-1.3" level="project" />
+    <orderEntry type="library" exported="" name="lib" level="project" />
   </component>
 </module>

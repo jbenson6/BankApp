@@ -6,7 +6,7 @@ public class OracleAccess {
 
     public static Connection connectDB() throws ClassNotFoundException, SQLException {
         Class.forName("oracle.jdbc.driver.OracleDriver");
-        return DriverManager.getConnection("jdbc:oracle:thin:@mybankapp_high?TNS_ADMIN=C:\\Users\\jdben\\Downloads\\Wallet_MyBankApp", "ADMIN", "CCsabathia52!");
+        return DriverManager.getConnection("jdbc:oracle:thin:@mybankapp_high?TNS_ADMIN=D:\\Oracle Wallet", "ADMIN", "CCsabathia52!");
     }
 
     public static boolean addUser(String firstname, String lastname, String username, String password) throws SQLException, ClassNotFoundException {

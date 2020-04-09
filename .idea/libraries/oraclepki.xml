@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="oraclepki">
     <CLASSES>
-      <root url="jar://$USER_HOME$/Downloads/oraclepki.jar!/" />
+      <root url="jar://D:/Oracle/oraclepki.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

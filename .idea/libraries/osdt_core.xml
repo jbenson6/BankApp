@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="osdt_core">
     <CLASSES>
-      <root url="jar://$USER_HOME$/Downloads/osdt_core.jar!/" />
+      <root url="jar://D:/Oracle/osdt_core.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
