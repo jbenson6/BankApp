@@ -91,4 +91,23 @@ public class OracleAccess {
             return false;
         }
     }
+
+    public static User getUser(String username) throws SQLException, ClassNotFoundException {
+        String query = "SELECT * FROM users where user_name=?";
+        Connection connect = connectDB();
+        PreparedStatement pstmt = connect.prepareStatement(query);
+        pstmt.setString(1, username);
+        ResultSet rs = pstmt.executeQuery();
+        rs.next();
+        User user = new User(
+                rs.getString("user_name"),
+                rs.getString("first_name"),
+                rs.getString("last_name"),
+                rs.getString("password")
+        );
+        //rs.close();
+        pstmt.close();
+        connect.close();
+        return user;
+    }
 }

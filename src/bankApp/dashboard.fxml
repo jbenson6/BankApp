@@ -4,13 +4,14 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-
-<AnchorPane prefHeight="802.0" prefWidth="979.0" xmlns="http://javafx.com/javafx/11.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bankApp.Dashboard">
-   <children>
+<Pane prefHeight="802.0" prefWidth="979.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bankApp.Dashboard">
       <Label text="Dashboard">
          <font>
             <Font size="36.0" />
          </font>
       </Label>
-   </children>
-</AnchorPane>
+      <Label fx:id="username" layoutX="73.0" layoutY="53.0" />
+      <Label fx:id="firstName" layoutX="73.0" layoutY="63.0" />
+      <Label fx:id="lastName" layoutX="73.0" layoutY="73.0" />
+      <Label fx:id="password" layoutX="73.0" layoutY="83.0" />
+</Pane>

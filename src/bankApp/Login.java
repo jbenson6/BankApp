@@ -4,8 +4,12 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
@@ -32,8 +36,14 @@ public class Login implements Initializable {
     public void signIn() {
         try {
             if(OracleAccess.signIn(username.getText(), password.getText())){
-                Parent root = FXMLLoader.load(getClass().getResource("dashboard.fxml"));
-                username.getScene().setRoot(root);
+                User user = OracleAccess.getUser(username.getText());
+                System.out.println(user.getFirstName() +" " + user.getLastName() + " " + user.getUsername() + " " + user.getPassword());
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("dashboard.fxml"));
+                Stage stage = (Stage)username.getScene().getWindow();
+                stage.setScene(new Scene(loader.load()));
+                Dashboard controller = loader.getController();
+                controller.initData(user);
+                stage.show();
             } else {
                 signInErrorMessage.setVisible(true);
             }
